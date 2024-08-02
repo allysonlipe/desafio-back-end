@@ -48,13 +48,13 @@ Passo a passo de como configurar o ambiente de desenvolvimento e instalar as dep
 
 2. Navegue até o diretório do projeto:
    ```bash
-   cd desafio-DEV-BackEnd
+   cd api
    ```
 
 3. Crie e ative um ambiente virtual:
    ```bash
    python -m venv myenv
-   source myenv/bin/activate  # No Windows: . myenv\Scripts\activate
+   source myenv/bin/activate  # No Windows: myenv\Scripts\activate
    ```
    Caso encontre o seguinte erro:
    ```
@@ -81,7 +81,19 @@ Passo a passo de como configurar o ambiente de desenvolvimento e instalar as dep
          ```
 
 
-4. Para instalar todas as dependências, execute:
+4. Pressione `Ctrl` + `Shift` + `P`, e ao abrir a janela abaixo, digite `Python: Select Interpreter` e selecione a opção marcada como na imagem abaixo: 
+   <img src="assets/img/print1.png">
+
+5. Agora, selecione a segunda opção da imagem, `Enter interpreter path`:
+   <img src="assets/img/print2.png">
+6. Agora, clique em `Find...`
+   <img src="assets/img/print3.png">
+7. O passo anterior irá abrir uma janela de gerenciador de arquivos, nessa janela, você vai selecionar o caminho da sua `env\scripts`:
+   <img src="assets/img/print5.png">
+
+8. E selecionar o arquivo `python`:
+   <img src="assets/img/print4.png">
+9. Para instalar todas as dependências, execute:
    ```bash
    pip install -r requirements.txt
    ```

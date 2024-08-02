@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS desafio;
 USE desafio;
 
 -- Criar script para criação da tabela Pessoas:
-CREATE TABLE IF NOT EXISTS pessoas (
+CREATE TABLE IF NOT EXISTS api_rest_pessoas (
     id_pessoa INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     data_nascimento DATE NOT NULL,
@@ -12,17 +12,17 @@ CREATE TABLE IF NOT EXISTS pessoas (
 );
 
 -- Criar script para alteração da tabela Pessoas:
-ALTER TABLE pessoas
+ALTER TABLE api_rest_pessoas
 ADD COLUMN nome_mae VARCHAR(100),
 ADD COLUMN nome_pai VARCHAR(100),
 ADD COLUMN cpf VARCHAR(11);
 
 -- Criar um script para adicionar índices de pesquisa a tabela Pessoas (nome e data_nascimento):
-CREATE INDEX idx_nome ON pessoas (nome);
-CREATE INDEX idx_data_nascimento ON pessoas (data_nascimento);
+CREATE INDEX idx_nome ON api_rest_pessoas (nome);
+CREATE INDEX idx_data_nascimento ON api_rest_pessoas (data_nascimento);
 
 -- Criar um script para adicionar indice/chave única a tabela Pessoas: Chave Única:cpf
-ALTER TABLE pessoas
+ALTER TABLE api_rest_pessoas
 ADD CONSTRAINT unique_cpf UNIQUE (cpf);
 
 /* Criar um script para criar uma procedure de inserção de registros:   
@@ -45,7 +45,7 @@ CREATE PROCEDURE inserir_pessoa (
 )
 
 BEGIN
-	INSERT INTO pessoas (nome, data_nascimento, salario, observacoes, nome_mae, nome_pai, cpf)
+	INSERT INTO api_rest_pessoas (nome, data_nascimento, salario, observacoes, nome_mae, nome_pai, cpf)
 	VALUES (p_nome, p_data_nascimento, p_salario, p_observacoes, p_nome_mae, p_nome_pai, p_cpf );
     SET p_id_pessoa = LAST_INSERT_ID();
     SELECT p_id_pessoa AS id_pessoa;
@@ -72,7 +72,7 @@ CREATE PROCEDURE atualizar_pessoa (
     IN p_cpf VARCHAR(11)
 )
 BEGIN
-    UPDATE pessoas
+    UPDATE api_rest_pessoas
     SET 
         nome = p_nome,
         data_nascimento = p_data_nascimento,
@@ -98,7 +98,7 @@ CREATE PROCEDURE deletar_pessoa (
     IN p_id_pessoa INT
 )
 BEGIN
-    DELETE FROM pessoas
+    DELETE FROM api_rest_pessoas
     WHERE id_pessoa = p_id_pessoa;
 
     SELECT 'OK' AS status;
@@ -116,7 +116,7 @@ CREATE PROCEDURE selecionar_tudo (
 
 )
 BEGIN
-	SELECT * FROM pessoas;
+	SELECT * FROM api_rest_pessoas;
 END $$
 
 DELIMITER ;
@@ -131,7 +131,7 @@ IN p_id_pessoa INT
 )
 
 BEGIN
-	SELECT * FROM pessoas
+	SELECT * FROM api_rest_pessoas
     WHERE id_pessoa = p_id_pessoa;
 END $$
 
