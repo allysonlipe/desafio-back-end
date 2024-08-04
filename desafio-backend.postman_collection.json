@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "3448d131-826f-4ccb-a470-c1c566a370ae",
+		"name": "desafio-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31615655"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/selecionar-tudo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"selecionar-tudo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/selecionar-pessoa/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/selecionar-pessoa/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"selecionar-pessoa",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/pessoas/criar/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"testando inserir\",\r\n  \"data_nascimento\": \"1990-05-15\",\r\n  \"salario\": 2500.00,\r\n  \"observacoes\": \"esse é o João\",\r\n  \"nome_mae\": \"Maria da Silva\",\r\n  \"nome_pai\": \"José da Silva\",\r\n  \"cpf\": \"12345632166\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/inserir-pessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"inserir-pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/atualizar-pessoa",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"1\",\r\n  \"nome\": \"testando atualizar\",\r\n  \"data_nascimento\": \"1999-12-15\",\r\n  \"salario\": 100.00,\r\n  \"observacoes\": \"esse é o João\",\r\n  \"nome_mae\": \"Maria da Silva\",\r\n  \"nome_pai\": \"José da Silva\",\r\n  \"cpf\": \"12345632145\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/atualizar-pessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"atualizar-pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/atualizar-pessoa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/deletar-pessoa/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"deletar-pessoa",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

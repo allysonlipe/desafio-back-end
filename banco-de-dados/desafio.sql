@@ -89,7 +89,7 @@ END $$
 DELIMITER ;
 
 /* Criar um script para criar uma procedure de remoção de registros:
-Procedure deverá receber como parâmetros o id_pessoa a ser removido da tabela de Pessoas .
+Procedure deverá receber como parâmetros o idPessoa a ser removido da tabela de Pessoas .
 Procedure deverá retornar para a API o valor OK */
 
 DELIMITER $$
@@ -137,7 +137,7 @@ END $$
 
 DELIMITER ;
 
-SET @id_pessoa = 0;
+SET @id_pessoa = LAST_INSERT_ID();
 
 /*Criar um script para inserir dados na tabela de Pessoas através da procedure de inserção .*/
 CALL inserir_pessoa('João da Silva','1990-05-15',2500.00,'esse é o João','Maria da Silva','José da Silva','12345678906',@id_pessoa);
@@ -153,5 +153,4 @@ call desafio.selecionar_tudo();
 
 /*Criar um script para selecionar um registro na tabela de Pessoas através da procedure de seleção de um registro.*/
 call desafio.selecionar_pessoa(@id_pessoa);
-
 
